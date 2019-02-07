@@ -1,0 +1,17 @@
+# Common configuration
+AllCops:
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.2
+
+Rails:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Style/Documentation:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/*'
