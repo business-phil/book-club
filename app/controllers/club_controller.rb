@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ClubController < ApplicationController
   def index
     @clubs = Club.all
