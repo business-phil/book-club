@@ -4,7 +4,7 @@ one:
   title: Testing for Dummies
   author: Test Person
   description: A very good book to use in the first fixture
-  club:
+  club: one
 
 two:
   title: Bad Feminist
@@ -13,4 +13,4 @@ two:
     Bad Feminist explores being a feminist while loving things that could seem at odds with feminist ideology.
     Gay's essays engage pop culture and her personal experiences, covering topics such as the Sweet Valley High series,
     Django Unchained, and Gay's own upbringing as a Haitian-American
-  club:
+  club: two

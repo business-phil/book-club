@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :author
       t.text :description
-      t.references :club, index: true
+      t.references :club, foreign_key: true
 
       t.timestamps
     end
