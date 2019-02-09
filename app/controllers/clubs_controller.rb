@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ClubsController < ApplicationController
-  before_action :set_club, only: [:show, :edit, :update, :destroy]
+  before_action :set_club, only: %i[show edit update destroy]
 
   # GET /clubs
   def index
@@ -7,8 +9,7 @@ class ClubsController < ApplicationController
   end
 
   # GET /clubs/1
-  def show
-  end
+  def show; end
 
   # GET /clubs/new
   def new
@@ -16,8 +17,7 @@ class ClubsController < ApplicationController
   end
 
   # GET /clubs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /clubs
   def create
@@ -52,13 +52,14 @@ class ClubsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_club
-      @club = Club.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def club_params
-      params.fetch(:club, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_club
+    @club = Club.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def club_params
+    params.fetch(:club, {})
+  end
 end
