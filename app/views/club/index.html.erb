@@ -1,9 +1,0 @@
-<h1>Club#index</h1>
-
-<ul>
-  <% @clubs.each do |club| %>
-    <li>
-      <a href=<%= club_path(club.id) %>><%= club.name %></a>
-    </li>
-  <% end %>
-</ul>
