@@ -2,11 +2,14 @@
 
 <h1><%= @club.name %></h1>
 
-<h2>Book info</h2>
-<h3>Title: <i><%= @club.book.title %></i></h3>
-<h3>Author: <%= @club.book.author %></h3>
-<% if @club.book.description.present? %>
-  <p><%= @club.book.description %></p>
+<% if @club.book.present? %>
+  <h2>Book info</h2>
+  <h3>Title: <i><%= @club.book.title %></i></h3>
+  <h3>Author: <%= @club.book.author %></h3>
+  <% if @club.book.description.present? %>
+    <p><%= @club.book.description %></p>
+  <% end %>
+  <%# else: link to add a book %>
 <% end %>
 
 <h2>Members</h2>

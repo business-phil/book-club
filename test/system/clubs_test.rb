@@ -16,6 +16,7 @@ class ClubsTest < ApplicationSystemTestCase
     visit clubs_url
     click_on 'New Club'
 
+    fill_in 'Name', with: @club.name
     click_on 'Create Club'
 
     assert_text 'Club was successfully created'
@@ -26,6 +27,7 @@ class ClubsTest < ApplicationSystemTestCase
     visit clubs_url
     click_on 'Edit', match: :first
 
+    fill_in 'Name', with: @club.name
     click_on 'Update Club'
 
     assert_text 'Club was successfully updated'
