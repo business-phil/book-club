@@ -15,10 +15,12 @@
   <%= @book.description %>
 </p>
 
-<p>
-  <strong>Club:</strong>
-  <%= @book.club %>
-</p>
+<% if @book.club.present? %>
+  <p>
+    <strong>Club:</strong>
+    <%= @book.club.name %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

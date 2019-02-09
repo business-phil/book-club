@@ -2,5 +2,5 @@
 
 class Club < ApplicationRecord
   has_and_belongs_to_many :members
-  has_one :book
+  has_one :book, dependent: :destroy
 end
