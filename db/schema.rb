@@ -45,4 +45,7 @@ ActiveRecord::Schema.define(version: 2019_02_08_154700) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "books", "clubs"
+  add_foreign_key "clubs_members", "clubs"
+  add_foreign_key "clubs_members", "members"
 end
