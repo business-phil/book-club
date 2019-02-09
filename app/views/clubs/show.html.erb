@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <h1><%= @club.name %></h1>
 
 <h2>Book info</h2>
@@ -13,3 +15,6 @@
     <li><%= member.name %></li>
   <% end %>
 </ul>
+
+<%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %>
