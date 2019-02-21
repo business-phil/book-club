@@ -2,6 +2,8 @@
 
 one:
   name: Test Club
+  members: one, two
 
 two:
   name: Gracie's Club
+  members: one
