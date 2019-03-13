@@ -26,6 +26,16 @@
   <% @club.members.each do |member| %>
     <li><%= member.name %></li>
   <% end %>
+
+  <% if current_user %>
+    <li>
+      <% if @club.members.exists?(current_user.id) %>
+        <%= link_to 'Leave club', leave_club_path(@club) %>
+      <% else %>
+        <%= link_to 'Join club', join_club_path(@club) %>
+      <% end %>
+    </li>
+  <% end %>
 </ul>
 
 <%= link_to 'Edit', edit_club_path(@club) %> |

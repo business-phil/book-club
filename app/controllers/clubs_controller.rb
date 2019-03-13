@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ClubsController < ApplicationController
-  before_action :set_club, only: %i[show edit update destroy]
+  before_action :set_club, only: %i[show edit update destroy join leave]
 
   # GET /clubs
   def index
@@ -44,6 +44,20 @@ class ClubsController < ApplicationController
     @club.destroy
 
     redirect_to clubs_url, notice: 'Club was successfully destroyed.'
+  end
+
+  # PATCH/PUT /clubs/1/join
+  def join
+    @club.members << current_user unless @club.members.exists?(current_user.id)
+
+    redirect_to @club, notice: 'Successfully joined club.'
+  end
+
+  # PATCH/PUT /clubs/1/leave
+  def leave
+    @club.members.delete(current_user)
+
+    redirect_to clubs_url, notice: 'Successfully left club.'
   end
 
   private
