@@ -10,5 +10,9 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+    def log_in_as_member(member_symbol)
+      post sessions_url,
+           params: { email: members(member_symbol).email, password: 'secret' }
+    end
   end
 end
