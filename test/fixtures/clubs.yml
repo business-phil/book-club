@@ -2,8 +2,10 @@
 
 one:
   name: Test Club
+  founder: one
   members: one, two
 
 two:
   name: Gracie's Club
+  founder: one
   members: one

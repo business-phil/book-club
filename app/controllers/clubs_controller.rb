@@ -21,7 +21,7 @@ class ClubsController < ApplicationController
 
   # POST /clubs
   def create
-    @club = Club.new(club_params)
+    @club = Club.new(club_params.merge(founder: current_user))
 
     if @club.save
       redirect_to @club, notice: 'Club was successfully created.'

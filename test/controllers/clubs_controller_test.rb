@@ -18,6 +18,8 @@ class ClubsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create club' do
+    log_in_as_member(:one)
+
     assert_difference('Club.count') do
       post clubs_url, params: { club: { name: @club.name } }
     end
